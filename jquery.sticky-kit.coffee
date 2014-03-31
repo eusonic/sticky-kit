@@ -24,7 +24,9 @@ $.fn.stick_in_parent = (opts={}) ->
       fixed = false
       bottomed = false
       spacer = $("<div />")
-      spacer.css('position', elm.css('position'))
+
+      if elm.css('position') == 'absolute'
+        spacer.css('position', 'absolute' )
 
       recalc = ->
         border_top = parseInt parent.css("border-top-width"), 10
@@ -189,5 +191,3 @@ $.fn.stick_in_parent = (opts={}) ->
 
     ) $ elm
   @
-
-

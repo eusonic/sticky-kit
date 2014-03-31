@@ -45,7 +45,9 @@
       fixed = false;
       bottomed = false;
       spacer = $("<div />");
-      spacer.css('position', elm.css('position'));
+      if (elm.css('position') === 'absolute') {
+        spacer.css('position', 'absolute');
+      }
       recalc = function() {
         var border_top, padding_top, restore;
         border_top = parseInt(parent.css("border-top-width"), 10);
